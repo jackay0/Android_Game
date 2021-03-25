@@ -52,11 +52,11 @@ public class player : MonoBehaviour
                 
 
                 if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, x)){
-                    jumpVelocity = 20f;
+                    jumpVelocity = 50f;
                     anim.SetBool("isJumping",true);
                 }
                 else if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, y)){
-                    jumpVelocity = 15f;
+                    jumpVelocity = 25f;
                     anim.SetBool("isJumping",true);
                 }
                 else if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, z)){

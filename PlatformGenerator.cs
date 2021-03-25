@@ -5,6 +5,8 @@ using System.Threading;
 
 public class PlatformGenerator : MonoBehaviour
 {
+    int i = 20;
+    int j = 0;
     [SerializeField] private Transform Platforms_too;
     // Start is called before the first frame update
     void Start()
@@ -19,14 +21,22 @@ public class PlatformGenerator : MonoBehaviour
         Instantiate(Platforms_too, pos,Quaternion.identity);
     }
     
+    private void DestroyPlatform()
+    {
+        
+
+    }
+
     void Update()
     {
-        for(int i = 20;i<100;i=i+10)
+        j++;
+        if(j%90==0)
         {
-           Spawn(new Vector3(i,1)); 
-           Thread.Sleep(10000);
+            Spawn(new Vector3(i,1)); 
+            i=i+10;
         }
-
+        
+       
 
     }
 }
