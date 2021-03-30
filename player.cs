@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class player : MonoBehaviour
     void Update()
     {
         float jumpVelocity = 0f;
-        rigidbody2d.velocity = new Vector2(10.0f,rigidbody2d.velocity.y);
+        rigidbody2d.velocity = new Vector2(9.7f,rigidbody2d.velocity.y);
 
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, groundLayer);
         if(Input.touchCount > 0)
@@ -52,15 +53,18 @@ public class player : MonoBehaviour
                 
 
                 if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, x)){
+                    ScoreScript.scoreValue += 1;
                     jumpVelocity = 50f;
                     anim.SetBool("isJumping",true);
                 }
                 else if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, y)){
+                    ScoreScript.scoreValue += 1;
                     jumpVelocity = 25f;
                     anim.SetBool("isJumping",true);
                 }
                 else if(Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 1f, z)){
-                    jumpVelocity = 10f;
+                    ScoreScript.scoreValue += 1;
+                    jumpVelocity = 11f;
                     anim.SetBool("isJumping",true);
                 }
                  
@@ -79,10 +83,17 @@ public class player : MonoBehaviour
 
             anim.SetBool("isJumping",false);
         }
-    
+
+        if(rigidbody2d.position.y<-4)
+        {
+            RestartGame();
+        }
     }
-    
-    
+    public void RestartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+    }
+
 
    
 }

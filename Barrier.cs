@@ -22,7 +22,7 @@ public class Barrier : MonoBehaviour
     void Update()
     {
         
-        rigidbody2d.velocity = new Vector2(10.0f,0f);
+        rigidbody2d.velocity = new Vector2(9.8f,0f);
     }
 
     
