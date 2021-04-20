@@ -23,11 +23,6 @@ public class PlatformGenerator : MonoBehaviour
         Instantiate(Platforms_too, pos,Quaternion.identity);
     }
     
-    private void DestroyPlatform()
-    {
-        
-
-    }
 
     void Update()
     {
