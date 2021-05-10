@@ -27,7 +27,7 @@ public class PlatformGenerator : MonoBehaviour
     void Update()
     {
         j++;
-        if(j%60==0)
+        if(j%50==0)
         {
             Spawn(new Vector3(i+(Random.Range(0,2)*10),1)); 
             i=i+10;

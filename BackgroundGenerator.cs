@@ -20,9 +20,9 @@ public class BackgroundGenerator : MonoBehaviour
     void Update()
     {
        
-        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(-12,-1)))); 
-        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(7,24)))); 
-        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(-12,-1)))); 
+        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(-12,-5)))); 
+        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(-3,24)))); 
+        Spawn(new Vector3(i+(Random.Range(0,5)),(Random.Range(-12,-5)))); 
         i=i+Random.Range(0,10);
         
         
